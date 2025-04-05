@@ -1,0 +1,69 @@
+# settings.yaml - Configuration for Multi-Agent AI Elderly Care System
+
+app:
+  name: ElderlyCareAI
+  version: 1.0
+  debug: true
+  language: "en"
+
+database:
+  type: mongodb
+  host: "localhost"
+  port: 27017
+  db_name: "elderly_care"
+  username: "admin"
+  password: "password123"
+
+agents:
+  health_monitor:
+    enabled: true
+    check_interval_seconds: 60
+    alert_thresholds:
+      heart_rate:
+        min: 60
+        max: 100
+      blood_pressure:
+        systolic_max: 140
+        diastolic_max: 90
+
+  safety_monitor:
+    enabled: true
+    fall_detection: true
+    inactivity_alert_minutes: 10
+
+  reminder_agent:
+    enabled: true
+    daily_schedule_file: "schedules/reminders.json"
+    voice_alerts: true
+
+  llm_handler:
+    model: "gpt-3.5"
+    provider: "openai"
+    api_key: "your-openai-api-key"
+
+wearable_device:
+  enabled: true
+  device_type: "SmartWatchPro"
+  api_endpoint: "http://localhost:5001/api/vitals"
+  access_token: "your-device-access-token"
+
+voice_interface:
+  tts_engine: "pyttsx3"
+  recognition_timeout: 5
+  language: "en-US"
+
+notifications:
+  enabled: true
+  channels:
+    - sms
+    - email
+  sms_gateway: "twilio"
+  email_service: "gmail"
+  twilio_sid: "your-twilio-sid"
+  twilio_token: "your-twilio-token"
+  email_sender: "noreply@elderlycareai.com"
+
+logging:
+  level: "INFO"
+  log_to_file: true
+  log_file_path: "logs/agent_logs.log"
