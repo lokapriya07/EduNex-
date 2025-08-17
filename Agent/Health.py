@@ -5,6 +5,7 @@ from core.db_connector import store_health_data
 
 def process_health_data(data):
     """
+    
     Processes wearable health data:
     - Sends it to an LLM for analysis
     - Stores data + analysis in a database
