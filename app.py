@@ -1,5 +1,4 @@
 # app.py - Main orchestrator for the Elderly Care AI system
-
 import yaml
 import threading
 from health_agent import HealthMonitorAgent
