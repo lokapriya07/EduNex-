@@ -7,7 +7,7 @@ class VoiceInterface:
     def __init__(self):
         self.engine = pyttsx3.init()
         voices = self.engine.getProperty('voices')
-        self.engine.setProperty('voice', voices[0].id)  # You can customize this
+        self.engine.setProperty('voice', voices[0].id)  
         self.recognizer = sr.Recognizer()
         print("[VoiceInterface] Initialized voice engine.")
 
